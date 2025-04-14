@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { Switch } from '@/Components/ui/switch'
+import AppSidebar from '@/components/AppSidebar.vue'
+import { SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
 </script>
 
 <template>
-  <div>
-    <Switch />
-  </div>
+  <SidebarProvider>
+    <AppSidebar />
+    <main>
+      <SidebarTrigger />
+      <RouterView />
+    </main>
+  </SidebarProvider>
 </template>
