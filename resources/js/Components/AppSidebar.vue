@@ -1,20 +1,64 @@
 <script setup lang="ts">
+import { Calendar, Home, Inbox, Search, Settings } from "lucide-vue-next"
 import {
   Sidebar,
   SidebarContent,
-  SidebarFooter,
   SidebarGroup,
-  SidebarHeader,
-} from '@/components/ui/sidebar'
+  SidebarGroupContent,
+  SidebarGroupLabel,
+  SidebarMenu,
+  SidebarMenuButton,
+  SidebarMenuItem,
+} from "@/components/ui/sidebar"
+
+// Menu items.
+const items = [
+  {
+    title: "Home",
+    url: "#",
+    icon: Home,
+  },
+  {
+    title: "Tempalates",
+    url: "#",
+    icon: Inbox,
+  },
+  {
+    title: "Fee Calculator",
+    url: "#",
+    icon: Calendar,
+  },
+  {
+    title: "Offials Forms",
+    url: "#",
+    icon: Search,
+  },
+  {
+    title: "Settings",
+    url: "#",
+    icon: Settings,
+  },
+];
 </script>
 
 <template>
   <Sidebar>
-    <SidebarHeader />
     <SidebarContent>
-      <SidebarGroup />
-      <SidebarGroup />
+      <SidebarGroup>
+        <SidebarGroupLabel>Application</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+              <SidebarMenuItem v-for="item in items" :key="item.title">
+                <SidebarMenuButton asChild>
+                    <a :href="item.url">
+                      <component :is="item.icon" />
+                      <span>{{item.title}}</span>
+                    </a>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
     </SidebarContent>
-    <SidebarFooter />
   </Sidebar>
 </template>
