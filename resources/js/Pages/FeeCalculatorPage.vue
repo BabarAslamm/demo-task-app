@@ -57,10 +57,12 @@ import {
                 </ToggleGroup>
               </div>
 
+             
+
               <!-- Exchange rate -->
-              <div class="flex justify-between items-center text-sm font-semibold text-gray-700">
+              <div class="flex  space-x-2 justify-between items-center text-sm font-semibold text-gray-700 p-3 bg-gray-100 rounded-lg">
                 <span>Curs 8 April</span>
-                <span>1 EUR = 4.9774 RON</span>
+                <span>1 EUR = 4,977.4 RON</span>
                 <button class="text-gray-500 hover:text-gray-800">
                   <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -68,19 +70,21 @@ import {
                   </svg>
                 </button>
               </div>
+              
 
-              <!-- Input and select -->
               <div class="flex items-center space-x-2">
                 <input
                   type="text"
                   placeholder="150.000"
                   class="flex-1 p-3 border rounded-lg bg-gray-100 focus:outline-none focus:ring focus:ring-blue-200"
                 />
-                <select class="border rounded-lg px-3 py-2 bg-gray-100 focus:outline-none">
+                <select class="w-32 border rounded-lg px-3 py-2 bg-gray-100 focus:outline-none">
                   <option>EUR</option>
                   <option>RON</option>
                 </select>
               </div>
+
+              
 
               <!-- Tax toggle -->
               <div class="flex items-center justify-between">
@@ -108,12 +112,18 @@ import {
                     <input type="radio" name="tarif" class="form-radio text-blue-900" />
                     <span class="ml-2">PF</span>
                   </label>
+                </div>
+
+                <div class="flex flex-col gap-2 p-3 bg-gray-100 rounded-lg mt-2">
                   <label class="inline-flex items-center">
                     <input type="radio" name="tarif" checked class="form-radio text-blue-900" />
                     <span class="ml-2">PJ</span>
                   </label>
                 </div>
               </div>
+
+
+              
 
               <!-- Buttons -->
               <div class="flex gap-4">
